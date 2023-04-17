@@ -1,8 +1,11 @@
 import Head from 'next/head'
-import {Text, Flex, Link, HStack} from '@chakra-ui/react'
+import {Text, Flex, Link, HStack, Box, Image, Stack} from '@chakra-ui/react'
 import '@fontsource/open-sans'
-
-
+import { Icon } from '@chakra-ui/react'
+import {DiJavascript, DiCss3, DiHtml5, DiReact, DiPostgresql, DiPython} from 'react-icons/di'
+import {TbBrandNextjs} from 'react-icons/tb'
+import {SiStyledcomponents, SiExpress, SiTypescript, SiDjango, SiChakraui} from 'react-icons/si'
+import {FaGit, FaNode} from 'react-icons/fa'
 
 export default function Home() {
   return (
@@ -13,10 +16,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex width={'100%'} height={'100vh'} bg={'secundary.grey1'} direction={'column'}>
-        <HStack justifyContent={'space-around'} borderBottom={'2px'} borderColor={'brand.pink3'}>
+      <Flex width={'100%'} height={'100%'} bg={'secundary.grey1'} direction={'column'} >
+        <HStack justifyContent={'space-around'} borderBottom={'2px'} borderColor={'brand.pink3'} height={'80px'} position={'fixed'} width={'100%'} zIndex={1} bg={'secundary.grey1'}>
           <Text color={'secundary.grey3'}>Gabriela Marchiori</Text>
-          <HStack>
+          <HStack spacing={4}>
             <Link href='#home' color={'secundary.grey3'}>Home</Link>
             <Link href='#projects' color={'secundary.grey3'}>Projects</Link>
             <Link href='#contact' color={'secundary.grey3'}>Contact</Link>
@@ -24,11 +27,39 @@ export default function Home() {
             <Link href='#about-me' color={'secundary.grey3'}>About me</Link>
           </HStack>
         </HStack>
+
+        <Flex  id='container' mx={'70px'} mt={'100px'} direction={'column'}>
+          
+          <Flex id='home' direction={'column'} alignItems={'center'}>
+            <Text color={'brand.pink1'} fontWeight={'extrabold'} fontSize={'4xl'}>Welcome to my portfolio!</Text>
+            <Text color={'secundary.grey3'}>You will see here all my projects created so far and all technologies used!</Text>
+
+            <Stack mx={'100px'} direction={'row'} wrap={'wrap'} spacing={5} my={'50px'} lineHeight={5}>
+              <Icon as={DiHtml5} width={'100px'} height={'100px'} title='HTML'/>
+              <Icon as={DiCss3} width={'100px'} height={'100px'} title='CSS'/>
+              <Icon as={DiJavascript} width={'100px'} height={'100px'} title='JAVASCRIPT'/>
+              <Icon as={SiTypescript} width={'100px'} height={'100px'} title='TYPESCRIPT'/>
+              <Icon as={DiReact} width={'100px'} height={'100px'} title='REACT'/>
+              <Icon as={SiStyledcomponents} width={'100px'} height={'100px'} title='STYLED-COMPONENTS'/>
+              <Icon as={TbBrandNextjs} width={'100px'} height={'100px'} title='NEXT.JS'/>
+              <Icon as={SiChakraui} width={'100px'} height={'100px'} title='CHAKRA-UI'/>
+              <Icon as={FaGit} width={'100px'} height={'100px'} title='GIT'/>
+              <Icon as={FaNode} width={'100px'} height={'100px'} title='NODE.JS'/>
+              <Icon as={SiExpress} width={'100px'} height={'100px'} title='EXPRESS.JS'/>
+              <Icon as={DiPostgresql} width={'100px'} height={'100px'} title='POSTGRESQL'/>
+              <Icon as={DiPython} width={'100px'} height={'100px'} title='PYTHON'/>
+              <Icon as={SiDjango} width={'100px'} height={'100px'} title='DJANGO'/>
+            </Stack>
+          </Flex>
         
-        <Flex id='about-me'>
-          <Text>Deu certo</Text>
+          <Flex id='about-me' justifyContent={'center'} alignItems={'center'} direction={'column'} my={'50px'}>
+            <Box borderRadius={'100%'}>
+              <Image src='./perfil2.jpeg' width={200} height={200} alt='profile' borderRadius={'100%'}/>
+            </Box>
+            <Text color={'secundary.grey3'}>Hello! My name is Gabriela I have a degree in production engineering from the federal university of Rio Grande do Norte and I have always loved technology. I took a fullstack developer course at Kenzie Academy Brazil and now, in addition to loving technology, I can work with it, and have the possibility of making peoples lives easier with technology.</Text>
+          </Flex>
+
         </Flex>
-        <Text>Teste</Text>
       </Flex>
       
     </>
